@@ -38,14 +38,32 @@ let year = d.getFullYear();
 //   document.getElementById("root")
 // );
 
+const d = new Date();
+let year = d.getFullYear();
+
+// ReactDom.render(
+//   <div>
+//     <h1>Hello {fName + " " + lName}!</h1>
+//     <h1>
+//       Hello {fName} {lName}!
+//     </h1>
+//     <h1> Hello {`${fName} ${lName}`}!</h1>
+//   </div>,
+//   document.getElementById("root")
+// );
+
 ReactDom.render(
   <div>
-<<<<<<< HEAD
+
+
     <h1 className="heading">{greeting}</h1>
-=======
+
     <p> Created by {`${fName} ${lName}!`} </p>
     <p> Copyright {year}</p>
->>>>>>> e4543fa50268fc5d2cf7339ab332ea1c84b116d9
+
+    <p> Created by {`${fName} ${lName}!`} </p>
+    <p> Copyright {year}</p>
+
   </div>,
   document.getElementById("root")
 );
