@@ -20,8 +20,12 @@ import ReactDom from "react-dom";
 
 ReactDom.render(
   <div>
-    <h1> Hello Mouli </h1>
-    <p> This is a JSX Element </p>
+    <h1>My Favourite Food Items</h1>
+    <ul>
+      <li>Pasta</li>
+      <li>Biryani</li>
+      <li>Chicken</li>
+    </ul>
   </div>,
   document.getElementById("root")
 );
