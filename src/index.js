@@ -1,31 +1,27 @@
-// import { StrictMode } from "react";
-// import { createRoot } from "react-dom/client";
-
-// import App from "./App";
-
-// const rootElement = document.getElementById("root");
-// const root = createRoot(rootElement);
-
-// root.render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>
-// );
-
 import React from "react";
 import ReactDom from "react-dom";
 
-// const React = require("react");
-// const ReactDom = require("react-dom");
+const fName = "Mouli";
+const lName = "Ganivada";
+
+const d = new Date();
+let year = d.getFullYear();
+
+// ReactDom.render(
+//   <div>
+//     <h1>Hello {fName + " " + lName}!</h1>
+//     <h1>
+//       Hello {fName} {lName}!
+//     </h1>
+//     <h1> Hello {`${fName} ${lName}`}!</h1>
+//   </div>,
+//   document.getElementById("root")
+// );
 
 ReactDom.render(
   <div>
-    <h1>My Favourite Food Items</h1>
-    <ul>
-      <li>Pasta</li>
-      <li>Biryani</li>
-      <li>Chicken</li>
-    </ul>
+    <p> Created by {`${fName} ${lName}!`} </p>
+    <p> Copyright {year}</p>
   </div>,
   document.getElementById("root")
 );
