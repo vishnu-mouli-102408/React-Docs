@@ -20,6 +20,10 @@ let year = d.getFullYear();
 
 ReactDom.render(
   <div>
+<<<<<<< HEAD
+=======
+    <h1> Hello </h1>
+>>>>>>> ce8f0b8 ("Initial commit")
     <p> Created by {`${fName} ${lName}!`} </p>
     <p> Copyright {year}</p>
   </div>,
