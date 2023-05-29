@@ -1,3 +1,4 @@
+
 import React from "react";
 import ReactDom from "react-dom";
 
@@ -24,6 +25,7 @@ if (currentTime < 12) {
   customStyle.color = "blue";
 }
 
+
 // ReactDom.render(
 //   <div>
 //     <h1>Hello {fName + " " + lName}!</h1>
@@ -37,6 +39,10 @@ if (currentTime < 12) {
 
 const d = new Date();
 let year = d.getFullYear();
+
+// const d = new Date();
+// let year = d.getFullYear();
+
 
 // ReactDom.render(
 //   <div>
@@ -53,11 +59,19 @@ ReactDom.render(
   <div>
 
 
+
     <h1> Hello </h1>
 
     <p> Created by {`${fName} ${lName}!`} </p>
     <p> Copyright {year}</p>
 
+    <h1 className="heading">{greeting}</h1>
+
+    {/* <p> Created by {`${fName} ${lName}!`} </p>
+    <p> Copyright {year}</p> */}
+
+
   </div>,
   document.getElementById("root")
 );
+
