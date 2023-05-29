@@ -24,9 +24,6 @@ if (currentTime < 12) {
   customStyle.color = "blue";
 }
 
-const d = new Date();
-let year = d.getFullYear();
-
 // ReactDom.render(
 //   <div>
 //     <h1>Hello {fName + " " + lName}!</h1>
