@@ -1,4 +1,13 @@
-.App {
+/* .App {
   font-family: sans-serif;
   text-align: center;
+} */
+
+.heading {
+  color: red;
+}
+
+.r-image {
+  height: 100px;
+  width: 100px;
 }

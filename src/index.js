@@ -20,9 +20,10 @@ let year = d.getFullYear();
 
 ReactDom.render(
   <div>
-    <h1> Hello </h1>
-    <p> Created by {`${fName} ${lName}!`} </p>
-    <p> Copyright {year}</p>
+    <h1 className="heading"> My Favourite Foods </h1>
+    <img className="r-image" src="https://picsum.photos/100" alt="xxx" />
+    <img className="r-image" src="https://picsum.photos/100" alt="xxx" />
+    <img className="r-image" src="https://picsum.photos/100" alt="xxx" />
   </div>,
   document.getElementById("root")
 );
