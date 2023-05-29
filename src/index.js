@@ -18,12 +18,17 @@ let year = d.getFullYear();
 //   document.getElementById("root")
 // );
 
+const customStyling = {
+  color: "red",
+  fontSize: "20px",
+  border: "1px solid black",
+};
+
+customStyling.color = "blue";
+
 ReactDom.render(
   <div>
-    <h1 className="heading"> My Favourite Foods </h1>
-    <img className="r-image" src="https://picsum.photos/100" alt="xxx" />
-    <img className="r-image" src="https://picsum.photos/100" alt="xxx" />
-    <img className="r-image" src="https://picsum.photos/100" alt="xxx" />
+    <h1 style={customStyling}> Hello Mouli </h1>
   </div>,
   document.getElementById("root")
 );
