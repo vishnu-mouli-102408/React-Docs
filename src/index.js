@@ -26,8 +26,24 @@ import App from "./Components/App"
 //   customStyle.color = "blue";
 // }
 
+
+// ReactDom.render(
+//   <div>
+//     <h1>Hello {fName + " " + lName}!</h1>
+//     <h1>
+//       Hello {fName} {lName}!
+//     </h1>
+//     <h1> Hello {`${fName} ${lName}`}!</h1>
+//   </div>,
+//   document.getElementById("root")
+// );
+
+const d = new Date();
+let year = d.getFullYear();
+
 // const d = new Date();
 // let year = d.getFullYear();
+
 
 // ReactDom.render(
 //   <div>
@@ -41,7 +57,31 @@ import App from "./Components/App"
 // );
 
 ReactDom.render(
+
   <App/>,
+
+  <div>
+
+
+
+
+    <h1> Hello </h1>
+
+    <p> Created by {`${fName} ${lName}!`} </p>
+    <p> Copyright {year}</p>
+
+
+    <h1> Hello Mouli</h1>
+
+    <h1 className="heading">{greeting}</h1>
+
+
+    {/* <p> Created by {`${fName} ${lName}!`} </p>
+    <p> Copyright {year}</p> */}
+
+
+  </div>,
+
   document.getElementById("root")
 );
 
