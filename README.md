@@ -30,7 +30,7 @@ Follow the instructions below to get started with the practice code:
     ```
 4. Start the development server:
     ```
-    npm install
+    npm start
     ```
 ## Code Organization
     
