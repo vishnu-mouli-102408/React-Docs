@@ -1,29 +1,30 @@
-
 import React from "react";
 import ReactDom from "react-dom";
+import App from "./Components/App"
+
 
 // var today = new Date();
 // var time =
 //   today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-var currentTime = new Date().getHours();
+// var currentTime = new Date().getHours();
 
-let customStyle = {
-  color: "",
-};
+// let customStyle = {
+//   color: "",
+// };
 
-let greeting;
+// let greeting;
 
-if (currentTime < 12) {
-  greeting = "Good Morning";
-  customStyle.color = "red";
-} else if (currentTime < 18) {
-  greeting = "Good Afternoon";
-  customStyle.color = "green";
-} else {
-  greeting = "Good Night";
-  customStyle.color = "blue";
-}
+// if (currentTime < 12) {
+//   greeting = "Good Morning";
+//   customStyle.color = "red";
+// } else if (currentTime < 18) {
+//   greeting = "Good Afternoon";
+//   customStyle.color = "green";
+// } else {
+//   greeting = "Good Night";
+//   customStyle.color = "blue";
+// }
 
 
 // ReactDom.render(
@@ -56,6 +57,9 @@ let year = d.getFullYear();
 // );
 
 ReactDom.render(
+
+  <App/>,
+
   <div>
 
 
@@ -77,6 +81,7 @@ ReactDom.render(
 
 
   </div>,
+
   document.getElementById("root")
 );
 
