@@ -37,5 +37,3 @@ ReactDOM.render(
 
   document.getElementById("root")
 );
-tById("root")
-);
