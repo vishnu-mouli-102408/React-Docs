@@ -1,23 +1,30 @@
 import React from "react";
-import Heading from "./Heading";
-import Unlist from "./Unlist";
+
 import "../styles.css";
+import Emoji from "./Emoji";
+import emojipedia from "../empjipedia";
 
-import Add, { subtract, divide, multiply } from '../calculator'
-
-export default function App() {
+function me(item) {
   return (
-    <div className="App">
-      <Heading />
-      <Unlist />
+    <Emoji
+      key={item.id}
+      emoji={item.emoji}
+      text={item.name}
+      content={item.meaning}
+    />
+  );
+}
 
-      <ul>
-        <li>{Add(4, 6)}</li>
-        <li>{subtract(20, 10)}</li>
-        <li>{divide(100, 10)}</li>
-        <li>{multiply(5, 2)}</li>
-      </ul>
+function App() {
+  return (
+    <div>
+      <h1>
+        <span>emojipedia</span>
+      </h1>
 
+      <dl className="dictionary">{emojipedia.map(me)}</dl>
     </div>
   );
 }
+
+export default App;
