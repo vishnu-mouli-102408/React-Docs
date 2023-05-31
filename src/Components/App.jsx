@@ -28,23 +28,38 @@ function App() {
   //   <Form isRegistered={userRegistered} />
   // </div>
 
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
-  function increase() {
-    setCount(count + 1);
+  // function increase() {
+  //   setCount(count + 1);
+  // }
+
+  // function decrease() {
+  //   setCount(count - 1);
+  // }
+
+  const [time, setTime] = useState(new Date().toLocaleTimeString());
+
+  function currentTime() {
+    return setTime(new Date().toLocaleTimeString());
   }
 
-  function decrease() {
-    setCount(count - 1);
-  }
+  setInterval(currentTime, 1000);
+
   return (
+    // <div style={{ textAlign: "center", margin: "auto" }}>
+    //   <h1 style={{ fontSize: "40px" }}>{count}</h1>
+    //   <button style={{ fontSize: "40px" }} onClick={decrease}>
+    //     -
+    //   </button>
+    //   <button style={{ fontSize: "40px" }} onClick={increase}>
+    //     +
+    //   </button>
+    // </div>
     <div style={{ textAlign: "center", margin: "auto" }}>
-      <h1 style={{ fontSize: "40px" }}>{count}</h1>
-      <button style={{ fontSize: "40px" }} onClick={decrease}>
-        -
-      </button>
-      <button style={{ fontSize: "40px" }} onClick={increase}>
-        +
+      <h1>{time}</h1>
+      <button style={{ fontSize: "40px" }} onClick={currentTime}>
+        Get Time
       </button>
     </div>
   );
