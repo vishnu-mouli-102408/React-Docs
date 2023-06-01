@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles.css";
-import cars from "../data.js";
+// import cars from "../data.js";
 // import Emoji from "./Emoji";
 // import emojipedia from "../empjipedia";
 
@@ -47,21 +47,21 @@ function App() {
 
   // setInterval(currentTime, 1000);
 
-  const [honda, tesla] = cars;
+  // const [honda, tesla] = cars;
 
-  const {
-    coloursByPopularity: [hondaTopColour],
-  } = honda;
-  const {
-    coloursByPopularity: [teslaTopColour],
-  } = tesla;
+  // const {
+  //   coloursByPopularity: [hondaTopColour],
+  // } = honda;
+  // const {
+  //   coloursByPopularity: [teslaTopColour],
+  // } = tesla;
 
-  const {
-    speedStats: { topSpeed: hondaTopSpeed },
-  } = honda;
-  const {
-    speedStats: { topSpeed: teslaTopSpeed },
-  } = tesla;
+  // const {
+  //   speedStats: { topSpeed: hondaTopSpeed },
+  // } = honda;
+  // const {
+  //   speedStats: { topSpeed: teslaTopSpeed },
+  // } = tesla;
 
   // <div style={{ textAlign: "center", margin: "auto" }}>
   //   <h1 style={{ fontSize: "40px" }}>{count}</h1>
@@ -78,23 +78,52 @@ function App() {
   //     Get Time
   //   </button>
   // </div>
+
+  // <table>
+  //   <tr>
+  //     <th>Brand</th>
+  //     <th>Top Speed</th>
+  //   </tr>
+  //   <tr>
+  //     <td>{tesla.model}</td>
+  //     <td>{teslaTopSpeed}</td>
+  //     <td>{teslaTopColour}</td>
+  //   </tr>
+  //   <tr>
+  //     <td>{honda.model}</td>
+  //     <td>{hondaTopSpeed}</td>
+  //     <td>{hondaTopColour}</td>
+  //   </tr>
+  // </table>
+
+  const [color, setColor] = useState(false);
+  const [heading, setHeading] = useState("Hello");
+
+  function handleClick() {
+    console.log("Clicked");
+    setHeading("Submitted");
+  }
+  function handleMouseOver() {
+    setColor(true);
+  }
+
+  function handleMouseOut() {
+    setColor(false);
+  }
+
   return (
-    <table>
-      <tr>
-        <th>Brand</th>
-        <th>Top Speed</th>
-      </tr>
-      <tr>
-        <td>{tesla.model}</td>
-        <td>{teslaTopSpeed}</td>
-        <td>{teslaTopColour}</td>
-      </tr>
-      <tr>
-        <td>{honda.model}</td>
-        <td>{hondaTopSpeed}</td>
-        <td>{hondaTopColour}</td>
-      </tr>
-    </table>
+    <div className="container">
+      <h1>{heading}</h1>
+      <input type="text" placeholder="What's your name?" />
+      <button
+        style={{ backgroundColor: color ? "black" : "white" }}
+        onMouseOut={handleMouseOut}
+        onMouseOver={handleMouseOver}
+        onClick={handleClick}
+      >
+        Submit
+      </button>
+    </div>
   );
 }
 
