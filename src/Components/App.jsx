@@ -121,17 +121,22 @@ function App() {
 
     setFullName((prev) => {
       // console.log(prev);
-      if (name === "fName") {
-        return {
-          fName: value,
-          lName: prev.lName,
-        };
-      } else if (name === "lName") {
-        return {
-          fName: prev.fName,
-          lName: value,
-        };
-      }
+      // if (name === "fName") {
+      //   return {
+      //     fName: value,
+      //     lName: prev.lName,
+      //   };
+      // } else if (name === "lName") {
+      //   return {
+      //     fName: prev.fName,
+      //     lName: value,
+      //   };
+      // }
+
+      return {
+        ...prev,
+        [name]: value,
+      };
     });
   }
 
