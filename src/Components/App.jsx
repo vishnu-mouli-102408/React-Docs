@@ -111,62 +111,100 @@ function App() {
   //   setColor(false);
   // }
 
-  const [fullName, setFullName] = useState({
-    fName: "",
-    lName: "",
-  });
+  // const [fullName, setFullName] = useState({
+  //   fName: "",
+  //   lName: "",
+  // });
+
+  // function handleChange(event) {
+  //   const { name, value } = event.target;
+
+  //   setFullName((prev) => {
+  // console.log(prev);
+  // if (name === "fName") {
+  //   return {
+  //     fName: value,
+  //     lName: prev.lName,
+  //   };
+  // } else if (name === "lName") {
+  //   return {
+  //     fName: prev.fName,
+  //     lName: value,
+  //   };
+  // }
+
+  // return {
+  //   ...prev,
+  //   [name]: value,
+  //   // };
+  // });
+  // }
+
+  // return (
+  //   <div className="container">
+  //     <h1>
+  //       Hello {fullName.fName} {fullName.lName}
+  //     </h1>
+  //     <input
+  //       name="fName"
+  //       onChange={handleChange}
+  //       type="text"
+  //       placeholder="First Name"
+  //       value={fullName.fName}
+  //     />
+  //     <input
+  //       name="lName"
+  //       onChange={handleChange}
+  //       type="text"
+  //       placeholder="Last Name"
+  //       value={fullName.lName}
+  //     />
+  //     <button
+  // style={{ backgroundColor: color ? "black" : "white" }}
+  // onMouseOut={handleMouseOut}
+  // onMouseOver={handleMouseOver}
+  // onClick={handleClick}
+  //     >
+  //       Submit
+  //     </button>
+  //   </div>
+  // );
+
+  // ToDo App
+
+  const [text, setText] = useState("");
+  const [Aitems, setAitems] = useState([]);
 
   function handleChange(event) {
-    const { name, value } = event.target;
+    const x = event.target.value;
+    setText(x);
+  }
 
-    setFullName((prev) => {
-      // console.log(prev);
-      // if (name === "fName") {
-      //   return {
-      //     fName: value,
-      //     lName: prev.lName,
-      //   };
-      // } else if (name === "lName") {
-      //   return {
-      //     fName: prev.fName,
-      //     lName: value,
-      //   };
-      // }
-
-      return {
-        ...prev,
-        [name]: value,
-      };
+  function handleClick() {
+    setAitems((prev) => {
+      return [...prev, text];
     });
+    setText("");
   }
 
   return (
     <div className="container">
-      <h1>
-        Hello {fullName.fName} {fullName.lName}
-      </h1>
-      <input
-        name="fName"
-        onChange={handleChange}
-        type="text"
-        placeholder="First Name"
-        value={fullName.fName}
-      />
-      <input
-        name="lName"
-        onChange={handleChange}
-        type="text"
-        placeholder="Last Name"
-        value={fullName.lName}
-      />
-      <button
-      // style={{ backgroundColor: color ? "black" : "white" }}
-      // onMouseOut={handleMouseOut}
-      // onMouseOver={handleMouseOver}
-      // onClick={handleClick}
-      >
-        Submit
-      </button>
+      <div className="heading">
+        <h1>To-Do List</h1>
+      </div>
+      <div className="form">
+        <input onChange={handleChange} type="text" value={text} />
+        <button onClick={handleClick}>
+          <span>Add</span>
+        </button>
+      </div>
+      <div>
+        <ul>
+          {Aitems.map((item) => {
+            return <li>{item}</li>;
+          })}
+        </ul>
+      </div>
     </div>
   );
 }
