@@ -96,30 +96,69 @@ function App() {
   //   </tr>
   // </table>
 
-  const [color, setColor] = useState(false);
-  const [heading, setHeading] = useState("Hello");
+  // const [color, setColor] = useState(false);
+  // const [heading, setHeading] = useState("Hello");
 
-  function handleClick() {
-    console.log("Clicked");
-    setHeading("Submitted");
-  }
-  function handleMouseOver() {
-    setColor(true);
-  }
+  // function handleClick() {
+  //   console.log("Clicked");
+  //   setHeading("Submitted");
+  // }
+  // function handleMouseOver() {
+  //   setColor(true);
+  // }
 
-  function handleMouseOut() {
-    setColor(false);
+  // function handleMouseOut() {
+  //   setColor(false);
+  // }
+
+  const [fullName, setFullName] = useState({
+    fName: "",
+    lName: "",
+  });
+
+  function handleChange(event) {
+    const { name, value } = event.target;
+
+    setFullName((prev) => {
+      // console.log(prev);
+      if (name === "fName") {
+        return {
+          fName: value,
+          lName: prev.lName,
+        };
+      } else if (name === "lName") {
+        return {
+          fName: prev.fName,
+          lName: value,
+        };
+      }
+    });
   }
 
   return (
     <div className="container">
-      <h1>{heading}</h1>
-      <input type="text" placeholder="What's your name?" />
+      <h1>
+        Hello {fullName.fName} {fullName.lName}
+      </h1>
+      <input
+        name="fName"
+        onChange={handleChange}
+        type="text"
+        placeholder="First Name"
+        value={fullName.fName}
+      />
+      <input
+        name="lName"
+        onChange={handleChange}
+        type="text"
+        placeholder="Last Name"
+        value={fullName.lName}
+      />
       <button
-        style={{ backgroundColor: color ? "black" : "white" }}
-        onMouseOut={handleMouseOut}
-        onMouseOver={handleMouseOver}
-        onClick={handleClick}
+      // style={{ backgroundColor: color ? "black" : "white" }}
+      // onMouseOut={handleMouseOut}
+      // onMouseOver={handleMouseOver}
+      // onClick={handleClick}
       >
         Submit
       </button>
