@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles.css";
 import List from "./List";
+import InputArea from "./InputArea";
 // import cars from "../data.js";
 // import Emoji from "./Emoji";
 // import emojipedia from "../empjipedia";
@@ -173,20 +174,13 @@ function App() {
 
   // ToDo App
 
-  const [text, setText] = useState("");
   const [Aitems, setAitems] = useState([]);
 
-  function handleChange(event) {
-    const x = event.target.value;
-    setText(x);
-  }
-
-  function handleClick() {
+  function handleClick(text) {
     setAitems((prev) => {
       return [...prev, text];
     });
     // console.log(Aitems);
-    setText("");
   }
 
   function deleteItem(id) {
@@ -203,12 +197,7 @@ function App() {
       <div className="heading">
         <h1>To-Do List</h1>
       </div>
-      <div className="form">
-        <input onChange={handleChange} type="text" value={text} />
-        <button onClick={handleClick}>
-          <span>Add</span>
-        </button>
-      </div>
+      <InputArea AddClick={handleClick} />
       <div>
         <ul>
           {Aitems.map((item, index) => {
