@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles.css";
+import List from "./List";
 // import cars from "../data.js";
 // import Emoji from "./Emoji";
 // import emojipedia from "../empjipedia";
@@ -184,7 +185,17 @@ function App() {
     setAitems((prev) => {
       return [...prev, text];
     });
+    // console.log(Aitems);
     setText("");
+  }
+
+  function deleteItem(id) {
+    console.log(id);
+    setAitems((prevItems) => {
+      return prevItems.filter((item, index) => {
+        return index !== id;
+      });
+    });
   }
 
   return (
@@ -200,8 +211,10 @@ function App() {
       </div>
       <div>
         <ul>
-          {Aitems.map((item) => {
-            return <li>{item}</li>;
+          {Aitems.map((item, index) => {
+            return (
+              <List key={index} id={index} onChecked={deleteItem} text={item} />
+            );
           })}
         </ul>
       </div>
